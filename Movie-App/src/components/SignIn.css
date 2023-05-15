@@ -1,0 +1,84 @@
+.form-email {
+    margin-bottom: 10px;
+}
+
+.form-password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+.sign-form {
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-height: 515px;
+    padding: 20px 0 30px;
+    width: 100%;
+    max-width: 314px;
+    align-items: center;
+    
+}
+
+.form-email input, .form-password input {
+    max-width: 274px;
+    /* max-height: 34px; */
+    padding: 16px 20px 0 20px;
+
+}
+
+.form-check {
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    width: 274px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-check a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+button {
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 24px 0px 12px;
+    width: 282px;
+    margin: 0 auto;
+}
+
+.footer {
+    color: whitesmoke;
+}
+
+.footer h3 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer h3 a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+.footer p a {
+    text-decoration: none;
+    color: blue;
+}
