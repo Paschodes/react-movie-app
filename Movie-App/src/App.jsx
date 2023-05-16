@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css'
-import Home from './components/Home'
-import SignIn from './components/SignIn'
+import Home from './components/intro/Home'
+import SignIn from './components/intro/SignIn'
 import { Route, Routes } from 'react-router-dom'
+import WebPage from './components/mainpages/WebPage'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/sign-in' element={<SignIn />}/>
+      <Route path='/web-page' element={<WebPage />} />
     </Routes>
     
     </>
