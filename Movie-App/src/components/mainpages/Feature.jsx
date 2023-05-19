@@ -25,6 +25,7 @@ const Feature = () => {
                     <InfoOutlined />
                     <span className='more-span'> More info</span>
                 </button>
+                
             </div>
         </div>
     </div>
