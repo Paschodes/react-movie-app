@@ -79,7 +79,7 @@ body {
     height: 60px;
   }
   
-  button {
+  .submit-btn {
     margin-left: 5px;
     font-size: 25px;
     color: whitesmoke;

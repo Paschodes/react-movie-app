@@ -64,11 +64,15 @@ h1 {
 }
 
 .signin-btn {
+    color: whitesmoke;
+    background-color: #e50914;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 600;
     width: 270px;
     margin-top: 20px;
+    padding: 15px 30px;
+    border: none;
 }
 
 .footer {
