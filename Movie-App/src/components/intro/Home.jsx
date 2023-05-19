@@ -84,7 +84,8 @@ const Home = () => {
                 <div className='in-but'>
                     <input type="text" id='email' value={input.email} onChange={handleChange} placeholder='Email address...'/>
                     
-                    <button type='submit'><Link to='/sign-in'>Get Started</Link></button>
+                    
+                    <button className='submit-btn' type='submit' ><Link to='/sign-in' >Get Started</Link></button>
                     <div className='error'>
                         {errorUI?.email?.length ? (
                             <span style={{ color: 'red' }}>

@@ -79,15 +79,60 @@ body {
     border: none;
 }
 
+.rated {
+    align-items: center;
+    bottom: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    color: white;
+}
+
+.rated-span {
+    align-items: center;
+    background-color: rgba(51,51,51,.6);
+    border: 3px #dcdcdc;
+    border-left-style: solid;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 1.1vw;
+    font-weight: 500;
+    height: 2.4vw;
+    padding: 0.5vw 3.5vw 0.5vw 0.8vw;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+}
 
 
 .top {
     text-align: left;
-    margin-top: 197px;
+    margin-top: 175px;
+}
+
+.series {
+    color: white;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.title {
+    max-width: 40%;
+    font-size: 80px;
+    letter-spacing: 0!important;
+    line-height: 63px;
+    margin-top: 0;
 }
 
 .description {
     margin: 20px 0px;
+    font-size: 1.2vw;
+    font-weight: 400;
+    max-width: 40%;
+    line-height: normal;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
 }
 
 .buttons {
@@ -107,6 +152,137 @@ body {
     cursor: pointer;
 }
 
-.buttons button .play {
+.buttons .play {
     background-color: white;
 }
+
+.buttons .more {
+    background-color: #737373;
+    margin-right: 0;
+}
+
+.more-span {
+    margin-left: 8px;
+}
+
+/*************** card lists ***********/
+
+.popular {
+    box-sizing: border-box;
+    margin: 3vw 0;
+    padding: 0;
+    outline: 0;
+    position: relative;
+}
+
+.popular .popular-h2 {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 80px;
+}
+
+.popular .row-container {
+    transition: transform .54s cubic-bezier(.5,0,.1,1) 0s;
+}
+
+.row-container {
+    position: relative;
+    z-index: 0;
+}
+
+.row-container .row-content {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.row-container .row-content .slider {
+    z-index: 2;
+}
+
+.slider {
+    margin: 0;
+    position: relative;
+    touch-action: pan-y;
+    text-align: start;
+    display: flex;
+
+}
+
+/******************* card ******************/
+
+.card {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 0.2vw;
+    position: relative;
+    vertical-align: top;
+    white-space: normal;
+    z-index: 1;
+}
+
+.card img {
+    width: 273px;
+    height: 219px;
+    margin-bottom: -5px;
+}
+
+.card-details {
+    background-color: #141414;
+    padding: 12px;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-icons .icon-child {
+    font-size: 2.5rem;
+    color: white;
+}
+
+
+.card-info {
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.card-info a {
+    margin: 3px;
+}
+
+.card-info .match {
+    color: rgb(49, 209, 49);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.card-info .card-rated {
+    border: 1px solid white;
+    padding: 0 2px;
+    width: 35px;
+    padding-top: 6px;
+    height: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.card-desc {
+    display: flex;
+    margin-top: 15px;
+}
+
+.record-icon {
+    color: #646464;
+    display: inline-block;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+    text-align: center;
+    width: 10px !important;
+}
+
