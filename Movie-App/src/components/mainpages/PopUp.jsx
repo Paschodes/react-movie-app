@@ -1,18 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NoiseAware, PlayArrow, RecommendRounded, Subtitles } from '@mui/icons-material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './PopUp.css'
 
+const APIKEY = "9196bd2"
+
 
 const PopUp = () => {
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState('');
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        fetch(`https://www.omdbapi.com/?t=from+scratch&apikey=${APIKEY}`)
+        .then((response) => {
+            if(!response.ok) {
+                throw new Error(`This is an HTTP Error: the status is ${response.status}`)
+            }
+            return response.json()
+        })
+        .then((data) => {
+            setData(data)
+            setError(null)
+        })
+        .catch((error) => {
+            setError(error)
+            setData(null)
+        })
+        .finally(() => setLoading(false))
+    })
   return (
     <div>
+        {loading && <h3>StillLoading... stay tuned!</h3>}
+        {error && <h3>{`There is a problem fetching your data - ${error}`}</h3>}
+
+        {data && 
         <div className='popup'>
             <div className='popup-top'>
-                <img src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg" alt="image" />
+                <img src={data.Poster} alt="image" />
     
                 <div className='popup-title'>
-                    <h3>The Witcher</h3>
+                    <h3>{data.Title}</h3>
                 
                     <div className='popup-icon-btn'>
                         <button className='play'>
@@ -30,47 +58,44 @@ const PopUp = () => {
             <div className='popup-bottom'>
                 <div className='detail-left'>
                     <div className='first'>
-                        <span>98% Match</span>
-                        <span>2022</span>
-                        <span>2 seasons</span>
+                        <span>{data.Ratings[0].Value} Match</span>
+                        <span>{data.Year}</span>
+                        <span>{data.Runtime}</span>
                         <NoiseAware />
                         <Subtitles />
                     </div>
 
                     <div>
-                        <span className='card-rated'>18+</span>
-                        <p>Violence, sex, nudity, language, substances, suicide, self-harm</p>
+                        <span className='card-rated'>{data.Rated}</span>
+                        <p>{data.Genre}</p>
                     </div>
 
                     <div className='third'>
-                        Volume 1 Coming June 29, Volume 2 Coming July 27
+                        Released: {data.Released}
                     </div>
 
                     <div>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                        </p>
+                        <p>{data.Plot}</p>
                     </div>
                 </div>
 
                 <div className='detail-right'>
                     <div>
                         <span>Cast:</span>
-                        <span> Henry Cavil, Anya Charlotra, Freya Alla, more</span>
+                        <span> {data.Actors}</span>
                     </div>
                     <div>
-                        <span>Genres:</span>
-                        <span> TV Dramas, TV shows, Based on Books, TV action & Adventure</span>
+                        <span>Awards:</span>
+                        <span> {data.Awards}</span>
                     </div>
                     <div>
-                        <span>This Show is:</span>
-                        <span> Exciting</span>
+                        <span>Language:</span>
+                        <span> {data.Language}</span>
                     </div>
                 </div>
             </div>
         </div>
-
+        }
     </div>
   )
 }
